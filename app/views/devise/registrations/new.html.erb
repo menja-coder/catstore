@@ -1,0 +1,92 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style>
+=======
+ <h2>Sign up</h2>
+>>>>>>> developpement
+
+   p{
+  position:relative;
+  left:450px;
+  top:20px;
+
+            }
+.h3{
+  color: white;
+}
+
+.field{
+  color: white;
+}
+
+
+body{
+  background-image: url(https://previews.123rf.com/images/voren1/voren11606/voren1160600017/60457759-deux-chatons-avec-un-chat-isol%C3%A9-sur-un-fond-blanc-.jpg);
+}
+
+  .container{
+    position: absolute;
+    background: black;
+    background: rgba(3,31,32,0.5) ;
+    width: 40% ;
+   
+    top: 12% ;
+    left: 30% ;
+     
+  }
+
+ 
+
+
+  </style>
+
+  <body>
+
+    <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <br><br><br>
+
+    <!-- <h2>Sign up</h2> -->
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <h1 class="h3 mb-3 font-weight-normal text-center">Sign up</h1>
+
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password",class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+      </div></br>
+
+      <div class="actions">
+        <%= f.submit "Sign up", class: "btn btn-lg btn-primary btn-block" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+
+    </div>
+  </div>
+</div>
+
+  </body>
+</html>

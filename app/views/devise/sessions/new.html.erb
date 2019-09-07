@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style>
+
+    p{
+      position:relative;
+      left: 590px;
+      top:385px;
+      color: white;
+    }
+    body{
+      background-image: url(https://previews.123rf.com/images/voren1/voren11711/voren1171100015/89605928-chat-de-maman-avec-chaton-isol%C3%A9-sur-fond-blanc-.jpg);
+    }
+    .h3{
+      color: white;
+    }
+
+    .field{
+      color: white;
+    }
+
+    .container{
+      position: absolute;
+      background: black;
+      background: rgba(3,31,32,0.5) ;
+      width: 40% ;
+     
+      top: 12% ;
+      left: 30% ;
+       
+    }
+
+
+  </style>
+
+  <body>
+
+    <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <br><br><br>
+
+    <!-- <h2>Log in</h2> -->
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-signin mt-3" }) do |f| %>
+    <h2 class="h3 mb-3 font-weight-normal text-center">LOG IN</h2>
+
+    <%= devise_error_messages! %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"%>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control"%>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+
+
+        <%= f.submit "Log in",class: "btn btn-lg btn-primary btn-block" %></br></br>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+    <p><%= render "devise/shared/links" %></p>
+
+  </body>
+</html>

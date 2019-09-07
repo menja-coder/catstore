@@ -1,0 +1,9 @@
+
+<img class = "showcat" src="<%= @item.image_url%>" alt="">
+<div class="description">
+  <b>Nom: </b><%= @item.title%> <br><br>
+  <b>Prix: </b><%= @item.price%> <span>$</span> <br><br>
+  <b>Détails:</b> <%= @item.description%><br><br><br><br>
+
+  <%=link_to "ajouter au panier",carts_path ,class:"btn btn-primary", type:"button",method: :POST%>
+</div>

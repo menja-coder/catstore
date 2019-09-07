@@ -1,0 +1,30 @@
+<!--########################-->
+<!--####   container  ######-->
+<!--########################-->
+
+<section class="container">
+  <div class="containerTitles">
+    <div class="jumbotron text-center">
+      <h1>CHATS A VENDRE</h1>
+    </div>
+
+    <div class="d-flex flex-row">
+      <div class="row">
+        <%@items.each do |item|%>
+          <div class="col-sm-4">
+            <div class="#" style="width: 20rem;">
+              <div class="card">
+                <img class="card-img-top" src="<%=item.image_url%>" alt="Card image">
+                  <div class="card-body">
+                    <h4 class="card-title"><%=item.title%></h4>
+                      <p class="card-text">Some example text.</p>
+                        <a href="<%= item_path(item.id) %>" class="btn btn-primary">show</a>
+                  </div>
+              </div> 
+            </div>
+          </div> 
+        <% end %>
+      </div>
+    </div>
+  </div>     
+</section>

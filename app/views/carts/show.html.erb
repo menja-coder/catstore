@@ -1,0 +1,41 @@
+<h1>Voici les articles dans ton panier:</h1>
+<table class="table">
+ <thead class="thead-dark">
+   <tr>
+     <th scope="col">Produits</th>
+     <th scope="col">Prix</th>
+     <th scope="col"></th>
+   </tr>
+ </thead>
+ <tbody>
+   <% @tab.each do |tab| %>
+   <th scope="row">  </th>
+   <tr>
+     <td><%=tab.title %></td>
+     <td><%=tab.price%></td>
+      <td>
+      <%= link_to "Enlever du panier",cart_path(@cart.id) ,method: :delete , class: "btn btn-warning" , style: "width:auto"%>
+    </td>
+
+   </tr>
+   <%end%>
+
+    <tr style="background-color: grey;">
+    <td  scope="col">Prix total</td>
+    <td scope="col"><%=@count.to_f%> €</td>
+    <td>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-description="Paiement"
+                data-amount="500"
+                data-currency="eur"
+                data-locale="auto"></script>
+    <%= link_to "Passer Commande", orders_path, class: "btn btn-warning", method: :POST, style: "width:auto"%>
+  </td>
+
+  </tr>
+  <div class="nbr_count">
+    <%=session[:nbr] %>
+  </div>
+ </tbody>
+</table>
